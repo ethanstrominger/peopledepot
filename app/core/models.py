@@ -7,6 +7,7 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from timezone_field import TimeZoneField
+from entities.practice_area.practice_area_models import PracticeArea
 
 
 class AbstractBaseModel(models.Model):
@@ -230,18 +231,6 @@ class Location(AbstractBaseModel):
     state = models.CharField(max_length=2, unique=False)
     zipcode = models.CharField(max_length=10, unique=False)
     phone = PhoneNumberField(blank=True)
-
-    def __str__(self):
-        return f"{self.name}"
-
-
-class PracticeArea(AbstractBaseModel):
-    """
-    Practice Area
-    """
-
-    name = models.CharField(max_length=255, unique=True)
-    description = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return f"{self.name}"
