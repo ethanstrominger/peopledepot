@@ -12,13 +12,11 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 
 import jwt
-from 
 
 def generate_token(user, rsa_keys):
     """
     Generate a JWT token for the given user, including the user's UUID in the payload.
     """
-    print(api_settings.JWT_P)
     # Ensure the user object has a UUID attribute
     user_uuid = str(user.uuid)
 

@@ -1,5 +1,5 @@
 from django.urls import path
-from core.api.cutom_token_api import CustomTokenObtainView
+from core.api.custom_token_api import CustomTokenObtainView
 from rest_framework import routers
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
