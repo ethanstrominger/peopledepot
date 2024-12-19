@@ -5,8 +5,8 @@ FROM python:3.10-alpine
 WORKDIR /usr/src/app
 
 # set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 ENV PYTHONPYCACHEPREFIX=/root/.cache/pycache/
 
 # install system dependencies
@@ -14,7 +14,7 @@ RUN \
   --mount=type=cache,target=/var/cache/apk \
   --mount=type=cache,target=/etc/apk/cache \
   apk add \
-  'graphviz=~9.0'
+  'graphviz=~12.2'
 
 # install font for graphviz
 COPY Roboto-Regular.ttf /root/.fonts/
